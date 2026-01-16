@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_splash"
+    tools:context=".SelectAppActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/background_light"
+            android:padding="20dp"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select App to Scan"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:id="@+id/totalAppsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Installed Apps: 0"
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/appsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:clipToPadding="false"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/loadingProgress"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:indeterminateTint="@color/primary"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/loadingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loading installed apps..."
+                    android:textSize="15sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif"
+                    android:visibility="visible"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

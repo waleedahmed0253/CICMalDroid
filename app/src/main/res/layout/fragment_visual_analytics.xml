@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_splash"
+    android:scrollbars="none"
+    tools:context=".fragments.VisualAnalyticsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Visual Analytics"
+                    android:textSize="32sp"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.02"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Security insights and threat patterns"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_secondary"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="6dp"
+                    android:alpha="0.8"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_visual_analytics"
+                android:background="@drawable/circle_accent_bg"
+                android:padding="10dp"
+                app:tint="@color/primary"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="18dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="155dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                app:cardBackgroundColor="@color/background_medium"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_scan"
+                        android:background="@drawable/circle_primary_light_bg"
+                        android:padding="8dp"
+                        app:tint="@color/primary"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:id="@+id/totalScansValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="36sp"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Scans"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_secondary"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginTop="4dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="155dp"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                app:cardBackgroundColor="@color/background_medium"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_warning"
+                        android:background="@drawable/circle_error_light_bg"
+                        android:padding="8dp"
+                        app:tint="@color/error"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:id="@+id/threatsDetectedValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="36sp"
+                        android:textColor="@color/error"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Threats Found"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_secondary"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginTop="4dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="155dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                app:cardBackgroundColor="@color/background_medium"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_shield_check"
+                        android:background="@drawable/circle_success_light_bg"
+                        android:padding="8dp"
+                        app:tint="@color/success"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:id="@+id/safeAppsValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="36sp"
+                        android:textColor="@color/success"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Safe Apps"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_secondary"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginTop="4dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="155dp"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                app:cardBackgroundColor="@color/background_medium"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_chart"
+                        android:background="@drawable/circle_accent_light_bg"
+                        android:padding="8dp"
+                        app:tint="@color/accent"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:id="@+id/avgConfidenceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textSize="36sp"
+                        android:textColor="@color/accent"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Avg Confidence"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_secondary"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginTop="4dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            app:cardBackgroundColor="@color/background_medium"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentStart="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Threat Distribution"
+                            android:textSize="20sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-medium"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Malware type breakdown"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary"
+                            android:fontFamily="sans-serif"
+                            android:layout_marginTop="4dp"
+                            android:alpha="0.7"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_pie_chart"
+                        android:background="@drawable/circle_primary_light_bg"
+                        android:padding="6dp"
+                        app:tint="@color/primary"/>
+
+                </RelativeLayout>
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/threatDistributionChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            app:cardBackgroundColor="@color/background_medium"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentStart="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scan Activity Timeline"
+                            android:textSize="20sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-medium"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Daily scan frequency"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary"
+                            android:fontFamily="sans-serif"
+                            android:layout_marginTop="4dp"
+                            android:alpha="0.7"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_timeline"
+                        android:background="@drawable/circle_accent_light_bg"
+                        android:padding="6dp"
+                        app:tint="@color/accent"/>
+
+                </RelativeLayout>
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/scanTimelineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            app:cardBackgroundColor="@color/background_medium"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentStart="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Confidence Score Distribution"
+                            android:textSize="20sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-medium"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Detection accuracy levels"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary"
+                            android:fontFamily="sans-serif"
+                            android:layout_marginTop="4dp"
+                            android:alpha="0.7"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_bar_chart"
+                        android:background="@drawable/circle_success_light_bg"
+                        android:padding="6dp"
+                        app:tint="@color/success"/>
+
+                </RelativeLayout>
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/confidenceChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            app:cardBackgroundColor="@color/background_medium"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentStart="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Behavior Analysis"
+                            android:textSize="20sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-medium"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Permission risk assessment"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary"
+                            android:fontFamily="sans-serif"
+                            android:layout_marginTop="4dp"
+                            android:alpha="0.7"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_radar"
+                        android:background="@drawable/circle_warning_light_bg"
+                        android:padding="6dp"
+                        app:tint="@color/warning"/>
+
+                </RelativeLayout>
+
+                <com.github.mikephil.charting.charts.RadarChart
+                    android:id="@+id/behaviorRadarChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            app:cardBackgroundColor="@color/background_medium"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentStart="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Risk Level Comparison"
+                            android:textSize="20sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-medium"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Threat severity ranking"
+                            android:textSize="13sp"
+                            android:textColor="@color/text_secondary"
+                            android:fontFamily="sans-serif"
+                            android:layout_marginTop="4dp"
+                            android:alpha="0.7"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_compare"
+                        android:background="@drawable/circle_error_light_bg"
+                        android:padding="6dp"
+                        app:tint="@color/error"/>
+
+                </RelativeLayout>
+
+                <com.github.mikephil.charting.charts.HorizontalBarChart
+                    android:id="@+id/riskComparisonChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:padding="5dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

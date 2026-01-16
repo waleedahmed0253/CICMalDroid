@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_splash"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/greetingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Good Morning"
+                        android:textSize="28sp"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"/>
+
+                    <TextView
+                        android:id="@+id/userNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="User"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="sans-serif"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/profileIcon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_profile"
+                    app:contentDescription="Profile"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Security Overview"
+                android:textSize="20sp"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="28dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/background_light"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/threatLevelContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@color/background_medium"
+                        android:padding="16dp"
+                        android:layout_marginBottom="16dp">
+
+                        <View
+                            android:id="@+id/threatIndicator"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:background="@drawable/circle_indicator"
+                            android:backgroundTint="@color/success"/>
+
+                        <TextView
+                            android:id="@+id/threatLevelText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No Active Threats"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:layout_marginStart="12dp"
+                            android:fontFamily="sans-serif-medium"/>
+
+                        <TextView
+                            android:id="@+id/threatCountText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="28sp"
+                            android:textColor="@color/success"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-medium"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="12dp">
+
+                            <TextView
+                                android:id="@+id/totalScansText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="28sp"
+                                android:textColor="@color/primary"
+                                android:textStyle="bold"
+                                android:fontFamily="sans-serif-medium"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Scans"
+                                android:textSize="13sp"
+                                android:textColor="@color/text_secondary"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="sans-serif"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/text_hint"
+                            android:alpha="0.3"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="12dp">
+
+                            <TextView
+                                android:id="@+id/detectedThreatsText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="28sp"
+                                android:textColor="@color/error"
+                                android:textStyle="bold"
+                                android:fontFamily="sans-serif-medium"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Detected"
+                                android:textSize="13sp"
+                                android:textColor="@color/text_secondary"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="sans-serif"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/text_hint"
+                            android:alpha="0.3"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="12dp">
+
+                            <TextView
+                                android:id="@+id/safeAppsText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="28sp"
+                                android:textColor="@color/success"
+                                android:textStyle="bold"
+                                android:fontFamily="sans-serif-medium"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Safe Apps"
+                                android:textSize="13sp"
+                                android:textColor="@color/text_secondary"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="sans-serif"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Security Scan"
+                android:textSize="20sp"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="28dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/background_light"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        app:tint="@color/accent"
+                        android:src="@drawable/splash_logo_modern"
+                        android:contentDescription="Scan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AI-Powered Malware Detection"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="12dp"
+                        android:textAlignment="center"
+                        android:fontFamily="sans-serif"/>
+
+                    <Button
+                        android:id="@+id/startScanButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="START NEW SCAN"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_white"
+                        android:textStyle="bold"
+                        android:background="@drawable/button_background"
+                        android:layout_marginTop="20dp"
+                        android:letterSpacing="0.05"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Scan Status"
+                android:textSize="20sp"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="28dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/background_light"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/lastScanIcon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:tint="@color/success"
+                        android:contentDescription="Status"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:id="@+id/lastScanResult"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No Threats Detected"
+                            android:textSize="17sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-medium"/>
+
+                        <TextView
+                            android:id="@+id/lastScanTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Today at 10:30 AM"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="28dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Recent Scans"
+                    android:textSize="20sp"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium"/>
+
+                <TextView
+                    android:id="@+id/viewAllScans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View All"
+                    android:textSize="15sp"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentScansRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
+                android:nestedScrollingEnabled="false"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

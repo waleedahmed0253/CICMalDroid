@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_splash"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavLayout"/>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottomNavLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="12dp"
+        android:weightSum="5">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:id="@+id/navHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/navHomeIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/primary"
+                android:src="@drawable/ic_home"
+                android:contentDescription="Home"/>
+
+            <TextView
+                android:id="@+id/navHomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12sp"
+                android:textColor="@color/primary"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:id="@+id/navVisualAnalytics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/navVisualAnalyticsIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/text_secondary"
+                android:src="@drawable/ic_visual_analytics"
+                android:contentDescription="Visual Analytics"/>
+
+            <TextView
+                android:id="@+id/navVisualAnalyticsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analytics"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:id="@+id/navHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/navHistoryIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/text_secondary"
+                android:src="@drawable/ic_history"
+                android:contentDescription="History"/>
+
+            <TextView
+                android:id="@+id/navHistoryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:id="@+id/navProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/navProfileIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/text_secondary"
+                android:src="@drawable/ic_profile_nav"
+                android:contentDescription="Profile"/>
+
+            <TextView
+                android:id="@+id/navProfileText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:id="@+id/navLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/navLogoutIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/text_secondary"
+                android:src="@drawable/ic_logout"
+                android:contentDescription="Logout"/>
+
+            <TextView
+                android:id="@+id/navLogoutText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
